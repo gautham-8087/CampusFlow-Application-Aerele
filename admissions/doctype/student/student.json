@@ -38,8 +38,7 @@
   {
    "fieldname": "date_of_birth",
    "fieldtype": "Date",
-   "label": "Date of Birth",
-   "reqd": 1
+   "label": "Date of Birth"
   },
   {
    "fieldname": "gender",
@@ -70,7 +69,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-04-02 11:56:51.973932",
+ "modified": "2026-04-02 13:04:08.184845",
  "modified_by": "Administrator",
  "module": "Admissions",
  "name": "Student",
