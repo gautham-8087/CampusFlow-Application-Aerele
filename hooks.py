@@ -253,3 +253,9 @@ doc_events = {
         "on_update": "campusflow.api.create_student_on_approval"
     }
 }
+
+scheduler_events = {
+    "daily": [
+        "campusflow.api.daily_fee_reminder"
+    ]
+}
