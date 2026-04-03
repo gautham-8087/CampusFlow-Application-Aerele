@@ -28,3 +28,8 @@ import frappe
 
 def process_fee_background(student):
     frappe.logger().info(f"Processing fee for {student}")
+
+frappe.enqueue(
+    "campusflow.api.process_fee_background",
+    student=doc.student
+)
