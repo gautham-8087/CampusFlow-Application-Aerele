@@ -33,3 +33,10 @@ frappe.enqueue(
     "campusflow.api.process_fee_background",
     student=doc.student
 )
+
+
+def daily_fee_reminder():
+    students = frappe.get_all("Student", fields=["name"])
+
+    for s in students:
+        frappe.logger().info(f"Reminder sent to {s.name}")
