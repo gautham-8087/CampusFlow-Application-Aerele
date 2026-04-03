@@ -22,3 +22,9 @@ def get_student_fee(student):
 
     total = sum([p.amount_paid for p in payments])
     return total
+
+
+import frappe
+
+def process_fee_background(student):
+    frappe.logger().info(f"Processing fee for {student}")
