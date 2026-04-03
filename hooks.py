@@ -248,8 +248,8 @@ app_license = "mit"
 # ignore_translatable_strings_from = []
 
 
-# doc_events = {
-#     "Admission Application": {
-#         "on_update": "campusflow.api.create_student_on_approval"
-#     }
-# }
+doc_events = {
+    "Admission Application": {
+        "on_update": "campusflow.api.create_student_on_approval"
+    }
+}
