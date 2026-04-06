@@ -13,7 +13,8 @@
   "gender",
   "guardian_name",
   "contact_number",
-  "fee_structure"
+  "fee_structure",
+  "total_fee"
  ],
  "fields": [
   {
@@ -64,12 +65,17 @@
    "fieldtype": "Link",
    "label": "Fee Structure",
    "options": "Fee Structure"
+  },
+  {
+   "fieldname": "total_fee",
+   "fieldtype": "Currency",
+   "label": "Total Fee"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-04-02 13:04:08.184845",
+ "modified": "2026-04-06 15:33:15.118204",
  "modified_by": "Administrator",
  "module": "Admissions",
  "name": "Student",

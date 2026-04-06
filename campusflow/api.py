@@ -43,21 +43,19 @@ def get_student_fee(student):
 
 @frappe.whitelist()
 def get_pending_fees():
-    total_fee = frappe.db.sql("""
-        SELECT SUM(total_fee) FROM `tabFee Structure`
-    """)[0][0] or 0
+    students = frappe.get_all("Student", fields=["name", "total_fee"])
 
-    total_paid = frappe.db.sql("""
-        SELECT SUM(amount_paid) FROM `tabFee Payment`
-        WHERE docstatus = 1
-    """)[0][0] or 0
+    total_pending = 0
 
-    pending = total_fee - total_paid
+    for s in students:
+        paid = frappe.db.sql("""
+            SELECT SUM(amount_paid)
+            FROM `tabFee Payment`
+            WHERE student = %s AND docstatus = 1
+        """, (s.name,))[0][0] or 0
 
-    if pending < 0:
-        pending = 0
+        total_fee = s.total_fee or 0
 
-    return {
-        "value":pending,
-        "fieldtype":"Currency"
-    }
+        total_pending += (total_fee - paid)
+
+    return total_pending
