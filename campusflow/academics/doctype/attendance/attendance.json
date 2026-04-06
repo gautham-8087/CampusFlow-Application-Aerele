@@ -10,7 +10,7 @@
   "date",
   "program",
   "course",
-  "amended_from"
+  "student"
  ],
  "fields": [
   {
@@ -40,21 +40,18 @@
    "reqd": 1
   },
   {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Attendance",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
+   "fieldname": "student",
+   "fieldtype": "Table",
+   "label": "Student",
+   "options": "Attendance Detail",
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-04-06 10:42:40.230611",
+ "modified": "2026-04-06 10:55:31.859775",
  "modified_by": "Administrator",
  "module": "Academics",
  "name": "Attendance",
