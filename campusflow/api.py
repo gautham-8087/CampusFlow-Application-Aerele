@@ -24,15 +24,15 @@ def get_student_fee(student):
     return total
 
 
-import frappe
+# import frappe
 
-def process_fee_background(student):
-    frappe.logger().info(f"Processing fee for {student}")
+# def process_fee_background(student):
+#     frappe.logger().info(f"Processing fee for {student}")
 
-frappe.enqueue(
-    "campusflow.api.process_fee_background",
-    student=doc.student
-)
+# frappe.enqueue(
+#     "campusflow.api.process_fee_background",
+#     student=doc.student
+# )
 
 
 def daily_fee_reminder():
@@ -40,8 +40,6 @@ def daily_fee_reminder():
 
     for s in students:
         frappe.logger().info(f"Reminder sent to {s.name}")
-
-import frappe
 
 @frappe.whitelist()
 def get_pending_fees():
