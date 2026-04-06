@@ -1,61 +1,49 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "ADM-.####",
- "creation": "2026-03-31 15:43:48.467840",
+ "autoname": "PAY-.####",
+ "creation": "2026-04-02 11:51:53.520009",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "section_break_n1tv",
-  "applicant_name",
-  "date_of_birth",
-  "program",
-  "guardian_name",
-  "contact_number",
+  "section_break_o4d6",
+  "student",
+  "amount_paid",
+  "payment_date",
   "status",
   "amended_from"
  ],
  "fields": [
   {
-   "fieldname": "section_break_n1tv",
+   "fieldname": "section_break_o4d6",
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "applicant_name",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Applicant Name",
-   "reqd": 1
-  },
-  {
-   "fieldname": "date_of_birth",
-   "fieldtype": "Date",
-   "label": "Date of Birth"
-  },
-  {
-   "fieldname": "program",
+   "fieldname": "student",
    "fieldtype": "Link",
-   "label": "Program",
-   "options": "Program",
+   "in_list_view": 1,
+   "label": "Student",
+   "options": "Student",
    "reqd": 1
   },
   {
-   "fieldname": "guardian_name",
-   "fieldtype": "Data",
-   "label": "Guardian Name",
+   "fieldname": "amount_paid",
+   "fieldtype": "Currency",
+   "label": "Amount Paid",
+   "non_negative": 1,
    "reqd": 1
   },
   {
-   "fieldname": "contact_number",
-   "fieldtype": "Data",
-   "label": "Contact Number",
+   "fieldname": "payment_date",
+   "fieldtype": "Datetime",
+   "label": "Payment Date",
    "reqd": 1
   },
   {
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Pending\nApproved\nRejected",
+   "options": "Paid\nPartial\nPending",
    "reqd": 1
   },
   {
@@ -63,7 +51,7 @@
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "Admission Application",
+   "options": "Fee Payment",
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
@@ -73,12 +61,12 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-04-02 13:03:38.642943",
+ "modified": "2026-04-02 12:05:09.115335",
  "modified_by": "Administrator",
- "module": "Admissions",
- "name": "Admission Application",
+ "module": "Finance",
+ "name": "Fee Payment",
  "naming_rule": "Expression",
- "owner": "agautham2024@gmail.com",
+ "owner": "Administrator",
  "permissions": [
   {
    "create": 1,
