@@ -24,19 +24,42 @@ def get_student_fee(student):
     return total
 
 
-import frappe
+# import frappe
 
-def process_fee_background(student):
-    frappe.logger().info(f"Processing fee for {student}")
+# def process_fee_background(student):
+#     frappe.logger().info(f"Processing fee for {student}")
 
-frappe.enqueue(
-    "campusflow.api.process_fee_background",
-    student=doc.student
-)
+# frappe.enqueue(
+#     "campusflow.api.process_fee_background",
+#     student=doc.student
+# )
 
 
-def daily_fee_reminder():
-    students = frappe.get_all("Student", fields=["name"])
+# def daily_fee_reminder():
+#     students = frappe.get_all("Student", fields=["name"])
 
-    for s in students:
-        frappe.logger().info(f"Reminder sent to {s.name}")
+#     for s in students:
+#         frappe.logger().info(f"Reminder sent to {s.name}")
+
+@frappe.whitelist()
+def get_pending_fees():
+    total_fee = frappe.db.sql("""
+        SELECT SUM(total_fee) FROM tabFee Structure
+    """)[0][0] or 0
+
+    paid = frappe.db.sql("""
+        SELECT SUM(amount_paid) 
+        FROM tabFee Payment 
+        WHERE docstatus = 1
+    """)[0][0] or 0
+
+    pending = total_fee - paid
+
+    # prevent negative values
+    if pending < 0:
+        pending = 0
+
+    return {
+        "value": pending,
+        "fieldtype": "Currency"
+    }
