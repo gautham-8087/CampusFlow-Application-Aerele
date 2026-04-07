@@ -259,3 +259,5 @@ scheduler_events = {
         "campusflow.api.daily_fee_reminder"
     ]
 }
+
+fixtures = ["Role", "Workflow", "Print Format"]
