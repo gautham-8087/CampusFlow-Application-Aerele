@@ -80,3 +80,16 @@ def get_attendance(student):
         "absent": absent,
         "percentage": (present / total * 100) if total > 0 else 0
     }
+
+@frappe.whitelist(allow_guest=True)
+def get_student_details(student):
+    doc = frappe.get_doc("Student", student)
+
+    return {
+        "student_id": doc.name,
+        "student_name": doc.student_name,
+        "program": doc.program,
+        "contact": doc.contact_number,
+        "guardian": doc.guardian_name,
+        "total_fee": doc.total_fee
+    }
