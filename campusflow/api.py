@@ -62,7 +62,7 @@ def get_pending_fees():
         "fieldtype":"Currency"
     }
     
-@frappe.whitelist()
+@frappe.whitelist(allow_guest=True)
 def get_attendance(student):
     records = frappe.get_all(
         "Attendance Detail",
