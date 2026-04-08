@@ -23,24 +23,6 @@ def get_student_fee(student):
     total = sum([p.amount_paid for p in payments])
     return total
 
-
-# import frappe
-
-# def process_fee_background(student):
-#     frappe.logger().info(f"Processing fee for {student}")
-
-# frappe.enqueue(
-#     "campusflow.api.process_fee_background",
-#     student=doc.student
-# )
-
-
-# def daily_fee_reminder():
-#     students = frappe.get_all("Student", fields=["name"])
-
-#     for s in students:
-#         frappe.logger().info(f"Reminder sent to {s.name}")
-
     
 @frappe.whitelist(allow_guest=True)
 def get_attendance(student):
@@ -73,6 +55,8 @@ def get_student_details(student):
         "guardian": doc.guardian_name,
         "total_fee": doc.total_fee
     }
+
+# Below APIs for Dashboard
 
 @frappe.whitelist(allow_guest=True)
 def get_total_students():
