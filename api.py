@@ -1,4 +1,5 @@
 import frappe
+from frappe import _
 
 def create_student_on_approval(doc, method):
     if doc.status == "Approved":
