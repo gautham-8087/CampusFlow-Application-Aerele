@@ -254,10 +254,4 @@ doc_events = {
     }
 }
 
-scheduler_events = {
-    "daily": [
-        "campusflow.api.daily_fee_reminder"
-    ]
-}
-
 fixtures = ["Role", "Workflow", "Print Format"]
