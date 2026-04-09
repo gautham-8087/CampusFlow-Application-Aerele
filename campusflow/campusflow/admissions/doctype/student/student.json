@@ -12,9 +12,7 @@
   "date_of_birth",
   "gender",
   "guardian_name",
-  "contact_number",
-  "fee_structure",
-  "total_fee"
+  "contact_number"
  ],
  "fields": [
   {
@@ -39,7 +37,8 @@
   {
    "fieldname": "date_of_birth",
    "fieldtype": "Date",
-   "label": "Date of Birth"
+   "label": "Date of Birth",
+   "reqd": 1
   },
   {
    "fieldname": "gender",
@@ -59,26 +58,13 @@
    "fieldtype": "Data",
    "label": "Contact Number",
    "reqd": 1
-  },
-  {
-   "fieldname": "fee_structure",
-   "fieldtype": "Link",
-   "label": "Fee Structure",
-   "options": "Fee Structure"
-  },
-  {
-   "fieldname": "total_fee",
-   "fieldtype": "Currency",
-   "label": "Total Fee",
-   "non_negative": 1,
-   "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-04-08 11:40:52.577823",
- "modified_by": "Administrator",
+ "modified": "2026-03-31 15:34:22.129644",
+ "modified_by": "agautham2024@gmail.com",
  "module": "Admissions",
  "name": "Student",
  "naming_rule": "By \"Naming Series\" field",

@@ -1,51 +1,43 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "STU-.YYYY.-.#### ",
- "creation": "2026-03-31 13:04:50.618299",
+ "autoname": "ADM-.###",
+ "creation": "2026-03-31 15:43:48.467840",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "student_name",
-  "student_id",
-  "program",
+  "section_break_n1tv",
+  "applicant_name",
   "date_of_birth",
-  "gender",
+  "program",
   "guardian_name",
   "contact_number",
-  "fee_structure",
-  "total_fee"
+  "status",
+  "amended_from"
  ],
  "fields": [
   {
-   "fieldname": "student_name",
+   "fieldname": "section_break_n1tv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "applicant_name",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Student Name",
+   "label": "Applicant Name",
    "reqd": 1
   },
   {
-   "fieldname": "student_id",
-   "fieldtype": "Data",
-   "label": "Student Id"
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date of Birth",
+   "reqd": 1
   },
   {
    "fieldname": "program",
    "fieldtype": "Link",
    "label": "Program",
    "options": "Program",
-   "reqd": 1
-  },
-  {
-   "fieldname": "date_of_birth",
-   "fieldtype": "Date",
-   "label": "Date of Birth"
-  },
-  {
-   "fieldname": "gender",
-   "fieldtype": "Select",
-   "label": "Gender",
-   "options": "Male\nFemale\nOthers",
    "reqd": 1
   },
   {
@@ -61,27 +53,32 @@
    "reqd": 1
   },
   {
-   "fieldname": "fee_structure",
-   "fieldtype": "Link",
-   "label": "Fee Structure",
-   "options": "Fee Structure"
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Pending\nApproved\nRejected",
+   "reqd": 1
   },
   {
-   "fieldname": "total_fee",
-   "fieldtype": "Currency",
-   "label": "Total Fee",
-   "non_negative": 1,
-   "reqd": 1
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Admission Application",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2026-04-08 11:40:52.577823",
- "modified_by": "Administrator",
+ "modified": "2026-03-31 16:09:29.416297",
+ "modified_by": "agautham2024@gmail.com",
  "module": "Admissions",
- "name": "Student",
- "naming_rule": "By \"Naming Series\" field",
+ "name": "Admission Application",
+ "naming_rule": "Expression",
  "owner": "agautham2024@gmail.com",
  "permissions": [
   {
@@ -94,6 +91,7 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
+   "submit": 1,
    "write": 1
   }
  ],
