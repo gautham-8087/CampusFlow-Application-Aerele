@@ -12,6 +12,8 @@ def create_student_on_approval(doc, method):
             })
             student.insert(ignore_permissions=True)
             
+
+
 # @frappe.whitelist(allow_guest = True)
 # def get_student_fee(student):
 #     payments = frappe.get_all(

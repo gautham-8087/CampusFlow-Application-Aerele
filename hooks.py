@@ -254,4 +254,8 @@ doc_events = {
     }
 }
 
+has_permission = {
+    "Student": "campusflow.permissions.student_permission"
+}
+
 fixtures = ["Role", "Workflow", "Print Format"]
